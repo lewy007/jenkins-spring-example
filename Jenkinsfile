@@ -8,6 +8,12 @@ pipeline {
     }
 
     stages {
+        stage('Which Java?') {
+            steps {
+                sh 'java --version'
+            }
+        }
+
         stage('Build') {
             steps {
                 sh "mvn clean compile -Dmaven.compiler.source=17 -Dmaven.compiler.target=17"
